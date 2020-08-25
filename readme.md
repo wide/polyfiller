@@ -70,26 +70,26 @@ import '@wide/polyfiller/lib/presets/fetch'
 
 To resolve which polyfill must be loaded, `@wide/polyfiller` makes use of the `bowser` lib and expose the main feature of the browser:
 ```js
-import capabitilies from '@wide/polyfiller/lib/capabitilies'
+import capabilities from '@wide/polyfiller/lib/capabilities'
 
-capabitilies.touch    // true | false
-capabitilies.platform // desktop | mobile
-capabitilies.os       // linux | macos | windows
-capabitilies.engine   // trident | gecko
-capabitilies.name     // ie | chrome | firefox
-capabitilies.version  // number
-capabitilies.chrome   // true | false
-capabitilies.opera    // true | false
-capabitilies.firefox  // true | false
-capabitilies.safari   // true | false
-capabitilies.edge     // true | false
-capabitilies.ie       // true | false
-capabitilies.webp     // true | false
+capabilities.touch    // true | false
+capabilities.platform // desktop | mobile
+capabilities.os       // linux | macos | windows
+capabilities.engine   // trident | gecko
+capabilities.name     // ie | chrome | firefox
+capabilities.version  // number
+capabilities.chrome   // true | false
+capabilities.opera    // true | false
+capabilities.firefox  // true | false
+capabilities.safari   // true | false
+capabilities.edge     // true | false
+capabilities.ie       // true | false
+capabilities.webp     // true | false
 ```
 
 These capabilities can be exposed as `window.capabilities` and `body` css classes:
 ```js
-import { expose } from '@wide/polyfiller/lib/capabitilies'
+import { expose } from '@wide/polyfiller/lib/capabilities'
 
 expose()
 ```
