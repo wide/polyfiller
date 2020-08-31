@@ -20,7 +20,7 @@ const capabilities = {
   os: browser.getOSName(true),
   engine: browser.getEngineName(true),
   name: name,
-  version: `${name}${browser.getBrowserVersion().split('.')[0]}`,
+  version: browser.getBrowserVersion().split('.')[0],
   chrome: (name === 'chrome'),
   opera: (name === 'opera'),
   firefox: (name === 'firefox'),
@@ -43,13 +43,25 @@ export default capabilities
  */
 export function expose() {
   window.capabilities = capabilities
-  document.body.classList.add(capabilities.touch ? '-touch' : '-not-touch')
-  document.body.classList.add(`-${capabilities.platform}`)
-  document.body.classList.add(`-${capabilities.os}`)
-  document.body.classList.add(`-${capabilities.engine}`)
-  document.body.classList.add(`-${capabilities.name}`)
-  document.body.classList.add(`-${capabilities.version}`)
+  document.body.classList.add(`-${sanitize(capabilities.platform)}`)
+  document.body.classList.add(`-${sanitize(capabilities.os)}`)
+  document.body.classList.add(`-${sanitize(capabilities.engine)}`)
+  document.body.classList.add(`-${sanitize(capabilities.name)}`)
+  document.body.classList.add(`-${sanitize(capabilities.name)}-${sanitize(capabilities.version)}`)
+  if(capabilities.touch) {
+    document.body.classList.add('-touch')
+  }
   if(capabilities.webp) {
     document.body.classList.add('-webp')
   }
+}
+
+
+/**
+ * Transform string for valid css class
+ * @param {String} str
+ * @return {String} 
+ */
+function sanitize(str) {
+  return str.toLowerCase().replace(/\s/g, '-')
 }
