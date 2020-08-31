@@ -1,6 +1,6 @@
 {
   "name": "@wide/polyfiller",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Polyfills loader on demand.",
   "license": "MIT",
   "author": "Aymeric Assier (https://github.com/myeti)",
@@ -9,8 +9,8 @@
     "Julien Martins Da Costa (https://github.com/jdacosta)"
   ],
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/wide/polyfiller.git"
+    "type": "git",
+    "url": "https://github.com/wide/polyfiller.git"
   },
   "main": "lib",
   "engines": {
