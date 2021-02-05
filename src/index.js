@@ -1,3 +1,4 @@
+import 'custom-event-polyfill' // needed for bowser support
 import 'jspolyfill-array.prototype.find' // needed for bowser support
 import Bowser from 'bowser'
 
@@ -22,6 +23,10 @@ export default function({ path = '', load = {} }) {
         : importFile(path, file)
     }
   }
+
+  // global event to specify the injection of polyfill files in the DOM
+  const event = new CustomEvent('polyfiller.all-injected')
+  document.body.dispatchEvent(event)
 }
 
 
