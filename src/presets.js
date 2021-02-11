@@ -1,9 +1,3 @@
-export const noop = {
-  'noop.js': {
-    chrome: '*'
-  }
-}
-
 export const babel = {
   'babel.js': {
     ie: '<=11'
