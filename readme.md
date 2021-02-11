@@ -29,6 +29,7 @@ polyfiller({
   - `key`: filename or url of the polyfill
   - `value`: criteria to satisfies (see [bowser.satisfied](https://www.npmjs.com/package/bowser))
 
+Polyfiller also manages `android` and `iOS` keys.
 
 ## Built-in polyfills
 
