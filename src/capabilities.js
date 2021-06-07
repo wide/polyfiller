@@ -20,7 +20,9 @@ const capabilities = {
   os: browser.getOSName(true),
   engine: browser.getEngineName(true),
   name: name,
-  version: browser.getBrowserVersion().split('.')[0],
+  version: typeof browser.getBrowserVersion() === 'string' 
+    ? browser.getBrowserVersion().split('.')[0] 
+    : '0',
   chrome: (name === 'chrome'),
   opera: (name === 'opera'),
   firefox: (name === 'firefox'),
