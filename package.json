@@ -1,6 +1,6 @@
 {
   "name": "@wide/polyfiller",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Polyfills loader on demand.",
   "license": "MIT",
   "author": "Aymeric Assier (https://github.com/myeti)",
